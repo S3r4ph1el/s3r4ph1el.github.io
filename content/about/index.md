@@ -74,7 +74,8 @@ FIAP · `02/2025 – 12/2026` · Cursando
 - **1º lugar** — Hack The Boo CTF 2025 (Brasil)
 - **1º lugar** — CTF BsidesBSB
 - **1º lugar** — CTF Cyber Arena NEXT FIAP 2025
-- **1º lugar** — Ranking de CTFs FIAP (1º e 2º semestres, nota final 10 em ambos)
+- **1º lugar** — Ranking de CTFs FIAP (2º semestre)
+- **3º lugar** — Ranking de CTFs FIAP (1º semestre)
 - **8º lugar nacional** — 4º CTF Hackers do Bem
 - **Rank Holo** — Hack The Box (Season 9)
 - **Linha de frente** — Grupo de Offensive Security da UnB (co-fundador)

@@ -74,7 +74,8 @@ FIAP · `02/2025 – 12/2026` · In progress
 - **1st place** — Hack The Boo CTF 2025 (Brazil)
 - **1st place** — CTF BsidesBSB
 - **1st place** — CTF Cyber Arena NEXT FIAP 2025
-- **1st place** — FIAP CTF Rankings (1st and 2nd semesters, final grade 10 in both)
+- **1st place** — FIAP CTF Rankings (2nd semester)
+- **3rd place** — FIAP CTF Rankings (1st semester)
 - **8th place nationally** — 4th Hackers do Bem CTF
 - **Holo Rank** — Hack The Box (Season 9)
 - **Co-founder** — UnB Offensive Security Group

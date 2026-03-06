@@ -1,0 +1,32 @@
+colorScheme = "noir"
+defaultAppearance = "dark"
+autoSwitchAppearance = false
+
+customCSS = ["css/custom.css"]
+
+enableSearch = true
+enableCodeCopy = true
+
+# Remove marca do Blowfish no footer
+showFooterCredits = false
+
+[homepage]
+  layout = "profile"
+  showRecent = true
+  showRecentItems = 5
+  showMoreLink = false
+  cardView = false
+
+[article]
+  showDate = true
+  showAuthor = true
+  showReadingTime = true
+  showTableOfContents = true
+  showTaxonomies = true
+  sharingLinks = []
+
+[list]
+  showBreadcrumbs = true
+  showSummary = true
+  groupByYear = false
+  cardView = false

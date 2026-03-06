@@ -1,0 +1,175 @@
+{{/*
+  sidebar-accordion.html — S3r4ph1el
+  Hierarquia: Platform > Category > Difficulty > OS > posts
+*/}}
+<nav class="global-sidebar" id="global-sidebar" aria-label="Sidebar">
+  <a href="/" class="sidebar-brand">~/S3r4ph1el</a>
+
+  {{/* ════ HACK THE BOX ════ */}}
+  <div class="sb-section" id="sb-htb">
+    <button class="sb-toggle sb-l1" onclick="sbToggle('sb-htb')">
+      <span>Hack The Box</span>
+      <svg class="sb-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+    <div class="sb-body">
+
+      {{/* Machines */}}
+      <div class="sb-section" id="sb-htb-machines">
+        <button class="sb-toggle sb-l2" onclick="sbToggle('sb-htb-machines')">
+          <span>Machines</span>
+          <svg class="sb-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="sb-body">
+
+          {{ range $diff := slice "easy" "medium" "hard" "insane" }}
+          {{ $diffLabel := (title $diff) }}
+          <div class="sb-section" id="sb-htb-m-{{ $diff }}">
+            <button class="sb-toggle sb-l3" onclick="sbToggle('sb-htb-m-{{ $diff }}')">
+              <span>{{ $diffLabel }}</span>
+              <svg class="sb-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="sb-body">
+              {{ range $os, $osLabel := dict "linux" "Linux" "windows" "Windows" }}
+              <div class="sb-section" id="sb-htb-m-{{ $diff }}-{{ $os }}">
+                <button class="sb-toggle sb-l4" onclick="sbToggle('sb-htb-m-{{ $diff }}-{{ $os }}')">
+                  <span>{{ $osLabel }}</span>
+                  <svg class="sb-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="sb-body">
+                  {{ $prefix := printf "/writeups/hackthebox/machines/%s/%s" $diff $os }}
+                  {{ range $.Site.Pages }}
+                    {{ if and (hasPrefix .RelPermalink $prefix) (not .IsSection) }}
+                      <a href="{{ .RelPermalink }}" class="sb-link{{ if eq $.RelPermalink .RelPermalink }} active{{ end }}">{{ .Title }}</a>
+                    {{ end }}
+                  {{ end }}
+                </div>
+              </div>
+              {{ end }}
+            </div>
+          </div>
+          {{ end }}
+
+        </div>
+      </div>
+
+      {{/* Sherlocks */}}
+      <div class="sb-section" id="sb-htb-sherlocks">
+        <button class="sb-toggle sb-l2" onclick="sbToggle('sb-htb-sherlocks')">
+          <span>Sherlocks</span>
+          <svg class="sb-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="sb-body">
+          {{ range $.Site.Pages }}
+            {{ if and (hasPrefix .RelPermalink "/writeups/hackthebox/sherlocks") (not .IsSection) }}
+              <a href="{{ .RelPermalink }}" class="sb-link{{ if eq $.RelPermalink .RelPermalink }} active{{ end }}">{{ .Title }}</a>
+            {{ end }}
+          {{ end }}
+        </div>
+      </div>
+
+      {{/* Challenges */}}
+      <div class="sb-section" id="sb-htb-challenges">
+        <button class="sb-toggle sb-l2" onclick="sbToggle('sb-htb-challenges')">
+          <span>Challenges</span>
+          <svg class="sb-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="sb-body">
+          {{ range $.Site.Pages }}
+            {{ if and (hasPrefix .RelPermalink "/writeups/hackthebox/challenges") (not .IsSection) }}
+              <a href="{{ .RelPermalink }}" class="sb-link{{ if eq $.RelPermalink .RelPermalink }} active{{ end }}">{{ .Title }}</a>
+            {{ end }}
+          {{ end }}
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  {{/* ════ HACKING CLUB ════ */}}
+  <div class="sb-section" id="sb-hc">
+    <button class="sb-toggle sb-l1" onclick="sbToggle('sb-hc')">
+      <span>Hacking Club</span>
+      <svg class="sb-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+    <div class="sb-body">
+
+      {{/* Machines HC */}}
+      <div class="sb-section" id="sb-hc-machines">
+        <button class="sb-toggle sb-l2" onclick="sbToggle('sb-hc-machines')">
+          <span>Machines</span>
+          <svg class="sb-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="sb-body">
+
+          {{ range $diff := slice "easy" "medium" "hard" "insane" }}
+          {{ $diffLabel := (title $diff) }}
+          <div class="sb-section" id="sb-hc-m-{{ $diff }}">
+            <button class="sb-toggle sb-l3" onclick="sbToggle('sb-hc-m-{{ $diff }}')">
+              <span>{{ $diffLabel }}</span>
+              <svg class="sb-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="sb-body">
+              {{ range $os, $osLabel := dict "linux" "Linux" "windows" "Windows" }}
+              <div class="sb-section" id="sb-hc-m-{{ $diff }}-{{ $os }}">
+                <button class="sb-toggle sb-l4" onclick="sbToggle('sb-hc-m-{{ $diff }}-{{ $os }}')">
+                  <span>{{ $osLabel }}</span>
+                  <svg class="sb-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="sb-body">
+                  {{ $prefix := printf "/writeups/hackingclub/machines/%s/%s" $diff $os }}
+                  {{ range $.Site.Pages }}
+                    {{ if and (hasPrefix .RelPermalink $prefix) (not .IsSection) }}
+                      <a href="{{ .RelPermalink }}" class="sb-link{{ if eq $.RelPermalink .RelPermalink }} active{{ end }}">{{ .Title }}</a>
+                    {{ end }}
+                  {{ end }}
+                </div>
+              </div>
+              {{ end }}
+            </div>
+          </div>
+          {{ end }}
+
+        </div>
+      </div>
+
+      {{/* Challenges HC */}}
+      <div class="sb-section" id="sb-hc-challenges">
+        <button class="sb-toggle sb-l2" onclick="sbToggle('sb-hc-challenges')">
+          <span>Challenges</span>
+          <svg class="sb-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="sb-body">
+          {{ range $.Site.Pages }}
+            {{ if and (hasPrefix .RelPermalink "/writeups/hackingclub/desafios") (not .IsSection) }}
+              <a href="{{ .RelPermalink }}" class="sb-link{{ if eq $.RelPermalink .RelPermalink }} active{{ end }}">{{ .Title }}</a>
+            {{ end }}
+          {{ end }}
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</nav>
+
+<script>
+(function() {
+  window.sbToggle = function(id) {
+    var el = document.getElementById(id);
+    if (el) el.classList.toggle('sb-open');
+  };
+  document.addEventListener('DOMContentLoaded', function() {
+    var path = window.location.pathname.replace(/\/$/, '');
+    document.querySelectorAll('.sb-link').forEach(function(link) {
+      if (link.getAttribute('href').replace(/\/$/, '') === path) {
+        link.classList.add('active');
+        var el = link.parentElement;
+        while (el && el.id !== 'global-sidebar') {
+          if (el.classList.contains('sb-section')) el.classList.add('sb-open');
+          el = el.parentElement;
+        }
+      }
+    });
+  });
+})();
+</script>

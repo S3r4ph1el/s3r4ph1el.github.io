@@ -1,0 +1,3 @@
+---
+title: "Insane — Linux"
+---

@@ -1,0 +1,316 @@
+/* ═══════════════════════════════════════════
+   S3r4ph1el — custom.css
+   ═══════════════════════════════════════════ */
+
+:root {
+  --sb-width:     260px;
+  --bg:           #080808;
+  --bg-sb:        #0d0d0d;
+  --bg-card:      #111111;
+  --border:       #1a1a1a;
+  --border-soft:  #222222;
+  --red:          #c0392b;
+  --red-hover:    #e74c3c;
+  --gold:         #f39c12;
+  --text:         #d4d4d4;
+  --text-muted:   #888888;
+  --muted:        #555555;
+}
+
+/* ── Global ── */
+html { scroll-behavior: smooth; }
+body { background-color: var(--bg) !important; }
+
+/* ══════════════════════════════════
+   SIDEBAR
+   ══════════════════════════════════ */
+.global-sidebar {
+  position: fixed;
+  top: 0; left: 0;
+  width: var(--sb-width);
+  height: 100vh;
+  background: var(--bg-sb);
+  border-right: 1px solid var(--border);
+  box-shadow: 2px 0 20px rgba(0, 0, 0, 0.6);
+  overflow-y: auto;
+  z-index: 200;
+  padding-bottom: 3rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-soft) transparent;
+}
+.global-sidebar::-webkit-scrollbar { width: 3px; }
+.global-sidebar::-webkit-scrollbar-thumb {
+  background: var(--border-soft);
+  border-radius: 2px;
+}
+
+/* Brand */
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  padding: 1.1rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--red);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 0.25rem;
+  letter-spacing: 0.1em;
+  font-family: ui-monospace, 'Cascadia Code', 'Fira Code', 'Courier New', monospace;
+  transition: color 0.15s;
+}
+.sidebar-brand:hover { color: var(--red-hover); }
+
+/* ── Seções ── */
+.sb-body    { display: none; }
+.sb-open > .sb-body { display: block; }
+
+/* ── Toggles ── */
+.sb-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  color: var(--text);
+  transition: color 0.15s;
+}
+.sb-toggle:hover { color: var(--red-hover); }
+
+/* Chevron */
+.sb-chevron {
+  width: 10px; height: 10px;
+  stroke: currentColor; fill: none; stroke-width: 2.5;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+  opacity: 0.5;
+}
+.sb-open > .sb-toggle .sb-chevron {
+  transform: rotate(180deg);
+  opacity: 1;
+}
+
+/* Nível 1 — plataforma (HTB, HC) */
+.sb-l1 {
+  padding: 0.6rem 1rem;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text);
+  border-top: 1px solid var(--border);
+  margin-top: 0.25rem;
+}
+
+/* Nível 2 — categoria (Machines, Sherlocks…) */
+.sb-l2 {
+  padding: 0.36rem 1rem 0.36rem 1.3rem;
+  font-size: 0.80rem;
+  font-weight: 500;
+  color: #9a9a9a;
+}
+
+/* Nível 3 — dificuldade */
+.sb-l3 {
+  padding: 0.28rem 1rem 0.28rem 1.9rem;
+  font-size: 0.77rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+/* Difficulty color hints */
+#sb-htb-m-easy   > .sb-toggle > span,
+#sb-hc-m-easy    > .sb-toggle > span { color: #3d9970; }
+#sb-htb-m-medium > .sb-toggle > span,
+#sb-hc-m-medium  > .sb-toggle > span { color: #e8a020; }
+#sb-htb-m-hard   > .sb-toggle > span,
+#sb-hc-m-hard    > .sb-toggle > span { color: #c0392b; }
+#sb-htb-m-insane > .sb-toggle > span,
+#sb-hc-m-insane  > .sb-toggle > span { color: #9b59b6; }
+
+/* Nível 4 — OS */
+.sb-l4 {
+  padding: 0.22rem 1rem 0.22rem 2.5rem;
+  font-size: 0.74rem;
+  color: var(--muted);
+}
+
+/* ── Links de post ── */
+.sb-link {
+  display: block;
+  padding: 0.2rem 1rem 0.2rem 3.1rem;
+  font-size: 0.74rem;
+  color: var(--muted);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.12s, border-color 0.12s;
+}
+.sb-link:hover {
+  color: var(--text);
+  border-left-color: var(--red);
+}
+.sb-link.active {
+  color: var(--gold);
+  border-left-color: var(--gold);
+  font-weight: 600;
+}
+
+/* ══════════════════════════════════
+   MAIN CONTENT — deslocado
+   ══════════════════════════════════ */
+body > div:first-of-type,
+#main-wrapper,
+.flex.flex-col.min-h-screen {
+  margin-left: var(--sb-width);
+}
+
+/* ══════════════════════════════════
+   LINKS GLOBAIS
+   ══════════════════════════════════ */
+a { color: var(--red); }
+a:hover { color: var(--red-hover); }
+
+/* ══════════════════════════════════
+   ARTICLE TYPOGRAPHY
+   ══════════════════════════════════ */
+article h1, article h2, article h3,
+article h4, article h5, article h6 {
+  color: var(--text);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+article h2 {
+  border-bottom: 1px solid var(--border-soft);
+  padding-bottom: 0.4em;
+  margin-top: 2em;
+}
+article h3 { margin-top: 1.6em; }
+
+/* ── Largura e justificação ── */
+.prose { max-width: 100% !important; }
+
+/* Remove max-width do header e conteúdo do artigo */
+#single_header,
+.article-content {
+  max-width: none !important;
+  width: 100%;
+}
+
+/* Faz o wrapper do conteúdo crescer no flex para usar espaço restante após TOC */
+article section.prose > div:not(:has(.toc-right, .toc-inside)) {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Reduz o padding lateral excessivo do body em telas grandes */
+@media (min-width: 1024px) {
+  body {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+}
+
+article p {
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── Inline code ── */
+article code:not(pre code) {
+  background: #161616;
+  border: 1px solid var(--border-soft);
+  border-radius: 3px;
+  padding: 0.15em 0.45em;
+  font-size: 0.87em;
+  color: var(--red-hover);
+}
+
+/* ── Code blocks ── */
+article pre {
+  border: 1px solid var(--border-soft);
+  border-left: 3px solid var(--red);
+  border-radius: 0 6px 6px 0;
+  overflow-x: auto;
+}
+
+/* ── Blockquote ── */
+article blockquote {
+  border-left: 3px solid var(--gold);
+  background: #0e0e0e;
+  margin: 1.5em 0;
+  padding: 0.8em 1.2em;
+  border-radius: 0 4px 4px 0;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* ── Tables ── */
+article table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9em;
+  margin: 1.5em 0;
+}
+article th {
+  background: #111111;
+  border: 1px solid var(--border-soft);
+  padding: 0.5em 0.8em;
+  text-align: left;
+  color: var(--text);
+  font-weight: 600;
+}
+article td {
+  border: 1px solid var(--border);
+  padding: 0.45em 0.8em;
+  color: var(--text);
+}
+article tr:nth-child(even) td { background: #0d0d0d; }
+
+/* ── Horizontal rules ── */
+article hr {
+  border: none;
+  border-top: 1px solid var(--border-soft);
+  margin: 2em 0;
+}
+
+/* ══════════════════════════════════
+   LINKEDIN — mesmo padrão do GitHub
+   ══════════════════════════════════ */
+a[href*="linkedin.com"] svg { color: var(--red) !important; fill: var(--red) !important; }
+a[href*="linkedin.com"]:hover svg { color: var(--red-hover) !important; fill: var(--red-hover) !important; }
+
+/* ══════════════════════════════════
+   FOOTER — centralizado
+   ══════════════════════════════════ */
+footer .text-xs,
+footer [class*="powered"],
+footer a[href*="blowfish"],
+footer a[href*="gohugo"] { display: none !important; }
+footer p:has(a[href*="blowfish"]),
+footer p:has(a[href*="gohugo"]) { display: none !important; }
+
+#site-footer .flex.items-center.justify-between {
+  justify-content: center;
+}
+
+/* ══════════════════════════════════
+   APPEARANCE SWITCHER — oculto
+   ══════════════════════════════════ */
+#appearance-switcher,
+#appearance-switcher-mobile { display: none !important; }
+
+/* ══════════════════════════════════
+   RESPONSIVO
+   ══════════════════════════════════ */
+@media (max-width: 768px) {
+  .global-sidebar { display: none; }
+  body > div:first-of-type,
+  #main-wrapper,
+  .flex.flex-col.min-h-screen { margin-left: 0; }
+}

@@ -10,7 +10,7 @@ Profissional de Cibersegurança especializado em Segurança Ofensiva e operaçõ
 
 ## Experience
 
-**Offensive Security Analyst** — Confidential<br class="br-mobile">
+**Offensive Security Analyst** — Confidential<span class="br-mobile"></span>
 `12/2025 – Present`
 
 - Pentesting em conformidade com as metodologias PTES e OWASP (WSTG/ASVS · MASTG · Top 10 for LLMs)
@@ -20,7 +20,7 @@ Profissional de Cibersegurança especializado em Segurança Ofensiva e operaçõ
 
 ---
 
-**Cyber Threat Intelligence Intern** — Teltec Solutions<br class="br-mobile">
+**Cyber Threat Intelligence Intern** — Teltec Solutions<span class="br-mobile"></span>
 `11/2025 – 12/2025`
 
 - Coleta e correlação de dados de ameaças em fontes abertas e fechadas (Axur)
@@ -29,7 +29,7 @@ Profissional de Cibersegurança especializado em Segurança Ofensiva e operaçõ
 
 ---
 
-**Cybersecurity Leader** — CJR · Empresa Júnior de Computação da UnB<br class="br-mobile">
+**Cybersecurity Leader** — CJR · Empresa Júnior de Computação da UnB<span class="br-mobile"></span>
 `07/2024 – Present`
 
 - Fundei e coordenei o grupo interno de Offensive Security da UnB, capacitando membros via labs e aulas de pentesting
@@ -38,7 +38,7 @@ Profissional de Cibersegurança especializado em Segurança Ofensiva e operaçõ
 
 ---
 
-**Military Officer** — Exército Brasileiro · Brasília, DF<br class="br-mobile">
+**Military Officer** — Exército Brasileiro · Brasília, DF<span class="br-mobile"></span>
 `02/2023 – 03/2024`
 
 - 1º Lugar geral no Curso de Formação de Oficiais da Reserva de 2023
@@ -49,11 +49,11 @@ Profissional de Cibersegurança especializado em Segurança Ofensiva e operaçõ
 ## Education
 
 **Bacharelado em Ciências da Computação**
-Universidade de Brasília (UnB)<br class="br-mobile">
+Universidade de Brasília (UnB)<span class="br-mobile"></span>
 `03/2024 – 12/2028` · Cursando
 
 **Tecnólogo em Segurança Cibernética**
-FIAP<br class="br-mobile">
+FIAP<span class="br-mobile"></span>
 `02/2025 – 12/2026` · Cursando
 
 ---

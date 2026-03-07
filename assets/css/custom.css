@@ -177,9 +177,10 @@ body::after {
 }
 
 /* ── Quebra de linha só no mobile ── */
-.br-mobile { display: none; }
+.br-mobile::before { content: ' '; }
 @media (max-width: 768px) {
-  .br-mobile { display: block; }
+  .br-mobile { display: block; height: 0; overflow: hidden; }
+  .br-mobile::before { content: none; }
 }
 
 /* ══════════════════════════════════

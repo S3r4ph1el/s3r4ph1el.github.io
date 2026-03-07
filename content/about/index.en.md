@@ -10,7 +10,7 @@ Cybersecurity professional specializing in Offensive Security and Red Team opera
 
 ## Experience
 
-**Offensive Security Analyst** — Confidential<br class="br-mobile">
+**Offensive Security Analyst** — Confidential<span class="br-mobile"></span>
 `12/2025 – Present`
 
 - Penetration testing following PTES and OWASP methodologies (WSTG/ASVS · MASTG · Top 10 for LLMs)
@@ -20,7 +20,7 @@ Cybersecurity professional specializing in Offensive Security and Red Team opera
 
 ---
 
-**Cyber Threat Intelligence Intern** — Teltec Solutions<br class="br-mobile">
+**Cyber Threat Intelligence Intern** — Teltec Solutions<span class="br-mobile"></span>
 `11/2025 – 12/2025`
 
 - Threat data collection and correlation from open and closed sources (Axur)
@@ -29,7 +29,7 @@ Cybersecurity professional specializing in Offensive Security and Red Team opera
 
 ---
 
-**Cybersecurity Leader** — CJR · UnB Junior Computing Company<br class="br-mobile">
+**Cybersecurity Leader** — CJR · UnB Junior Computing Company<span class="br-mobile"></span>
 `07/2024 – Present`
 
 - Founded and led the UnB Offensive Security internal group, training members through labs and pentesting lectures
@@ -38,7 +38,7 @@ Cybersecurity professional specializing in Offensive Security and Red Team opera
 
 ---
 
-**Military Officer** — Brazilian Army · Brasília, DF<br class="br-mobile">
+**Military Officer** — Brazilian Army · Brasília, DF<span class="br-mobile"></span>
 `02/2023 – 03/2024`
 
 - 1st place overall in the 2023 Reserve Officer Training Course
@@ -49,11 +49,11 @@ Cybersecurity professional specializing in Offensive Security and Red Team opera
 ## Education
 
 **Bachelor's Degree in Computer Science**
-University of Brasília (UnB)<br class="br-mobile">
+University of Brasília (UnB)<span class="br-mobile"></span>
 `03/2024 – 12/2028` · In progress
 
 **Technologist in Cybersecurity**
-FIAP<br class="br-mobile">
+FIAP<span class="br-mobile"></span>
 `02/2025 – 12/2026` · In progress
 
 ---

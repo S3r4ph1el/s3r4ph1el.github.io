@@ -1,6 +1,7 @@
 ---
 title: "Whoami"
 date: 2026-03-06
+translationKey: "about"
 ---
 
 Cybersecurity professional specializing in Offensive Security and Red Team operations. Former Brazilian Army officer — a foundation that shaped the discipline, leadership, and resilience I bring to every engagement. Passionate about the offensive field, I continuously sharpen my skills through CTFs, Bug Bounty programs, and adversary simulation, operating across the full attack lifecycle on Web Applications, Networks, Mobile, and AI systems.
@@ -9,17 +10,17 @@ Cybersecurity professional specializing in Offensive Security and Red Team opera
 
 ## Experience
 
-**Offensive Security Analyst** — Confidential
+**Offensive Security Analyst** — Confidential<br class="br-mobile">
 `12/2025 – Present`
 
-- Penetration testing following PTES and OWASP (WSTG/ASVS) methodologies
+- Penetration testing following PTES and OWASP methodologies (WSTG/ASVS · MASTG · Top 10 for LLMs)
 - Red Team Operations simulating advanced threat TTPs based on the Cyber Kill Chain framework
 - Risk analysis and technical report writing to support vulnerability remediation
 - Collaboration with infrastructure, development, and defensive security teams
 
 ---
 
-**Cyber Threat Intelligence Intern** — Teltec Solutions
+**Cyber Threat Intelligence Intern** — Teltec Solutions<br class="br-mobile">
 `11/2025 – 12/2025`
 
 - Threat data collection and correlation from open and closed sources (Axur)
@@ -28,7 +29,7 @@ Cybersecurity professional specializing in Offensive Security and Red Team opera
 
 ---
 
-**Cybersecurity Leader** — CJR · UnB Junior Computing Company
+**Cybersecurity Leader** — CJR · UnB Junior Computing Company<br class="br-mobile">
 `07/2024 – Present`
 
 - Founded and led the UnB Offensive Security internal group, training members through labs and pentesting lectures
@@ -37,7 +38,7 @@ Cybersecurity professional specializing in Offensive Security and Red Team opera
 
 ---
 
-**Military Officer** — Brazilian Army · Brasília, DF
+**Military Officer** — Brazilian Army · Brasília, DF<br class="br-mobile">
 `02/2023 – 03/2024`
 
 - 1st place overall in the 2023 Reserve Officer Training Course
@@ -48,10 +49,12 @@ Cybersecurity professional specializing in Offensive Security and Red Team opera
 ## Education
 
 **Bachelor's Degree in Computer Science**
-University of Brasília (UnB) · `03/2024 – 12/2028` · In progress
+University of Brasília (UnB)<br class="br-mobile">
+`03/2024 – 12/2028` · In progress
 
 **Technologist in Cybersecurity**
-FIAP · `02/2025 – 12/2026` · In progress
+FIAP<br class="br-mobile">
+`02/2025 – 12/2026` · In progress
 
 ---
 
@@ -61,9 +64,7 @@ FIAP · `02/2025 – 12/2026` · In progress
 - **CRTA** — Certified Red Team Analyst · CyberWarFare Labs
 - **eJPT** — Junior Penetration Tester · eLearnSecurity
 - **CWHI** — Crowsec Web Hacking Initial
-- **Jr Cybersecurity Analyst** · Cisco
-- **Jr Pentester** · TryHackMe
-- **Offensive Pentesting** · TryHackMe
+
 - **FIAP Certified Cybersecurity Professional** · FIAP
 - **FIAP Certified Information Security Professional** · FIAP
 

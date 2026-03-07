@@ -1,6 +1,7 @@
 ---
 title: "Whoami"
 date: 2026-03-06
+translationKey: "about"
 ---
 
 Profissional de Cibersegurança especializado em Segurança Ofensiva e operações de Red Team. Ex-Oficial do Exército Brasileiro — uma base que moldou a disciplina, liderança e resiliência que trago a cada engajamento. Apaixonado pela área ofensiva, aprimoro continuamente minhas habilidades por meio de CTFs, programas de Bug Bounty e simulações de adversários, atuando em todo o ciclo de ataque em Aplicações Web, Redes, Mobile e sistemas de IA.
@@ -9,17 +10,17 @@ Profissional de Cibersegurança especializado em Segurança Ofensiva e operaçõ
 
 ## Experience
 
-**Offensive Security Analyst** — Confidential
+**Offensive Security Analyst** — Confidential<br class="br-mobile">
 `12/2025 – Present`
 
-- Pentesting em conformidade com as metodologias PTES e OWASP (WSTG/ASVS)
+- Pentesting em conformidade com as metodologias PTES e OWASP (WSTG/ASVS · MASTG · Top 10 for LLMs)
 - Red Team Operations simulando TTPs de ameaças avançadas com base em modelos como Cyber Kill Chain
 - Análise de riscos e elaboração de relatórios técnicos para apoio à correção de vulnerabilidades
 - Colaboração com times de infraestrutura, desenvolvimento e segurança defensiva
 
 ---
 
-**Cyber Threat Intelligence Intern** — Teltec Solutions
+**Cyber Threat Intelligence Intern** — Teltec Solutions<br class="br-mobile">
 `11/2025 – 12/2025`
 
 - Coleta e correlação de dados de ameaças em fontes abertas e fechadas (Axur)
@@ -28,7 +29,7 @@ Profissional de Cibersegurança especializado em Segurança Ofensiva e operaçõ
 
 ---
 
-**Cybersecurity Leader** — CJR · Empresa Júnior de Computação da UnB
+**Cybersecurity Leader** — CJR · Empresa Júnior de Computação da UnB<br class="br-mobile">
 `07/2024 – Present`
 
 - Fundei e coordenei o grupo interno de Offensive Security da UnB, capacitando membros via labs e aulas de pentesting
@@ -37,7 +38,7 @@ Profissional de Cibersegurança especializado em Segurança Ofensiva e operaçõ
 
 ---
 
-**Military Officer** — Exército Brasileiro · Brasília, DF
+**Military Officer** — Exército Brasileiro · Brasília, DF<br class="br-mobile">
 `02/2023 – 03/2024`
 
 - 1º Lugar geral no Curso de Formação de Oficiais da Reserva de 2023
@@ -48,10 +49,12 @@ Profissional de Cibersegurança especializado em Segurança Ofensiva e operaçõ
 ## Education
 
 **Bacharelado em Ciências da Computação**
-Universidade de Brasília (UnB) · `03/2024 – 12/2028` · Cursando
+Universidade de Brasília (UnB)<br class="br-mobile">
+`03/2024 – 12/2028` · Cursando
 
 **Tecnólogo em Segurança Cibernética**
-FIAP · `02/2025 – 12/2026` · Cursando
+FIAP<br class="br-mobile">
+`02/2025 – 12/2026` · Cursando
 
 ---
 
@@ -61,9 +64,7 @@ FIAP · `02/2025 – 12/2026` · Cursando
 - **CRTA** — Certified Red Team Analyst · CyberWarFare Labs
 - **eJPT** — Junior Penetration Tester · eLearnSecurity
 - **CWHI** — Crowsec Web Hacking Initial
-- **Jr Cybersecurity Analyst** · Cisco
-- **Jr Pentester** · TryHackMe
-- **Offensive Pentesting** · TryHackMe
+
 - **FIAP Certified Cybersecurity Professional** · FIAP
 - **FIAP Certified Information Security Professional** · FIAP
 

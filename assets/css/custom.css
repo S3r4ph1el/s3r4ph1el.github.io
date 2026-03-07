@@ -32,13 +32,9 @@ body::after {
   height: 480px;
   background: url('/images/hero.png') no-repeat center / contain;
   filter: invert(1) opacity(0.07);
-  z-index: 0;
+  z-index: -1;
   pointer-events: none;
 }
-
-/* Garante que o conteúdo fica sobre o background */
-body > * { position: relative; z-index: 1; }
-.global-sidebar { z-index: 200; }
 
 /* ══════════════════════════════════
    SIDEBAR
@@ -178,6 +174,12 @@ body > * { position: relative; z-index: 1; }
   color: var(--gold);
   border-left-color: var(--gold);
   font-weight: 600;
+}
+
+/* ── Quebra de linha só no mobile ── */
+.br-mobile { display: none; }
+@media (max-width: 768px) {
+  .br-mobile { display: block; }
 }
 
 /* ══════════════════════════════════

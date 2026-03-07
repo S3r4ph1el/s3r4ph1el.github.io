@@ -21,6 +21,25 @@
 html { scroll-behavior: smooth; }
 body { background-color: var(--bg) !important; }
 
+/* ── Hero background image ── */
+body::after {
+  content: '';
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 480px;
+  height: 480px;
+  background: url('/images/hero.png') no-repeat center / contain;
+  filter: invert(1) opacity(0.07);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Garante que o conteúdo fica sobre o background */
+body > * { position: relative; z-index: 1; }
+.global-sidebar { z-index: 200; }
+
 /* ══════════════════════════════════
    SIDEBAR
    ══════════════════════════════════ */

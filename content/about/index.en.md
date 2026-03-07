@@ -60,10 +60,10 @@ FIAP<br class="br-mobile">
 
 ## Certifications
 
+- **CWHI** — Crowsec Web Hacking Initial · Hacking Club
 - **eWPTX** — Web Application Pentester eXtreme · eLearnSecurity
-- **CRTA** — Certified Red Team Analyst · CyberWarFare Labs
 - **eJPT** — Junior Penetration Tester · eLearnSecurity
-- **CWHI** — Crowsec Web Hacking Initial
+- **CRTA** — Certified Red Team Analyst · CyberWarFare Labs
 
 - **FIAP Certified Cybersecurity Professional** · FIAP
 - **FIAP Certified Information Security Professional** · FIAP

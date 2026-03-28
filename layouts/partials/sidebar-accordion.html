@@ -1,7 +1,20 @@
 {{/*
   sidebar-accordion.html — S3r4ph1el
-  Hierarquia: Platform > Category > Difficulty > OS > posts
+  Hierarchy: Platform > Category > Difficulty > OS > posts
 */}}
+
+{{/* Hamburger toggle for tablet/mobile */}}
+<button class="sb-hamburger" id="sb-hamburger" aria-label="Toggle sidebar" aria-expanded="false">
+  <svg viewBox="0 0 24 24" id="sb-hamburger-icon">
+    <line x1="4" y1="6" x2="20" y2="6"/>
+    <line x1="4" y1="12" x2="20" y2="12"/>
+    <line x1="4" y1="18" x2="20" y2="18"/>
+  </svg>
+</button>
+
+{{/* Overlay */}}
+<div class="sb-overlay" id="sb-overlay"></div>
+
 <nav class="global-sidebar" id="global-sidebar" aria-label="Sidebar">
   <a href="/" class="sidebar-brand">~/S3r4ph1el</a>
 
@@ -154,10 +167,51 @@
 
 <script>
 (function() {
+  /* ── Accordion toggle ── */
   window.sbToggle = function(id) {
     var el = document.getElementById(id);
     if (el) el.classList.toggle('sb-open');
   };
+
+  /* ── Hamburger sidebar toggle ── */
+  var hamburger = document.getElementById('sb-hamburger');
+  var sidebar   = document.getElementById('global-sidebar');
+  var overlay   = document.getElementById('sb-overlay');
+
+  function openSidebar() {
+    sidebar.classList.add('sb-visible');
+    overlay.classList.add('sb-visible');
+    hamburger.setAttribute('aria-expanded', 'true');
+  }
+
+  function closeSidebar() {
+    sidebar.classList.remove('sb-visible');
+    overlay.classList.remove('sb-visible');
+    hamburger.setAttribute('aria-expanded', 'false');
+  }
+
+  if (hamburger) {
+    hamburger.addEventListener('click', function() {
+      if (sidebar.classList.contains('sb-visible')) {
+        closeSidebar();
+      } else {
+        openSidebar();
+      }
+    });
+  }
+
+  if (overlay) {
+    overlay.addEventListener('click', closeSidebar);
+  }
+
+  /* Close sidebar on Escape key */
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && sidebar.classList.contains('sb-visible')) {
+      closeSidebar();
+    }
+  });
+
+  /* ── Auto-expand to active post ── */
   document.addEventListener('DOMContentLoaded', function() {
     var path = window.location.pathname.replace(/\/$/, '');
     document.querySelectorAll('.sb-link').forEach(function(link) {

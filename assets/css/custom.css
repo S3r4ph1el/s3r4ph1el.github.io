@@ -71,10 +71,10 @@ body::after {
 
 
 /* ══════════════════════════════════
-   HAMBURGER TOGGLE (mobile/tablet)
+   HAMBURGER TOGGLE (always visible)
    ══════════════════════════════════ */
 .sb-hamburger {
-  display: none;
+  display: flex;
   position: fixed;
   top: 0.75rem;
   left: 0.75rem;
@@ -107,7 +107,7 @@ body::after {
   stroke-linecap: round;
 }
 
-/* Overlay behind sidebar on mobile */
+/* Overlay behind sidebar */
 .sb-overlay {
   display: none;
   position: fixed;
@@ -117,10 +117,13 @@ body::after {
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
 }
+.sb-overlay.sb-visible {
+  display: block;
+}
 
 
 /* ══════════════════════════════════
-   SIDEBAR
+   SIDEBAR — slide-in drawer
    ══════════════════════════════════ */
 .global-sidebar {
   position: fixed;
@@ -136,7 +139,11 @@ body::after {
   padding-bottom: 3rem;
   scrollbar-width: thin;
   scrollbar-color: var(--border-soft) transparent;
+  transform: translateX(-100%);
   transition: transform var(--t-smooth);
+}
+.global-sidebar.sb-visible {
+  transform: translateX(0);
 }
 .global-sidebar::-webkit-scrollbar { width: 3px; }
 .global-sidebar::-webkit-scrollbar-thumb {
@@ -148,7 +155,7 @@ body::after {
 .sidebar-brand {
   display: flex;
   align-items: center;
-  padding: 1.1rem 1rem;
+  padding: 3.5rem 1rem 1.1rem;
   font-size: 0.85rem;
   font-weight: 700;
   color: var(--red);
@@ -465,17 +472,6 @@ body::after {
 
 
 /* ══════════════════════════════════
-   MAIN CONTENT — offset by sidebar
-   ══════════════════════════════════ */
-body > div:first-of-type,
-#main-wrapper,
-.flex.flex-col.min-h-screen {
-  margin-left: var(--sb-width);
-  transition: margin-left var(--t-smooth);
-}
-
-
-/* ══════════════════════════════════
    LINKS
    ══════════════════════════════════ */
 a {
@@ -514,13 +510,6 @@ article h3 { margin-top: 1.6em; }
 article section.prose > div:not(:has(.toc-right, .toc-inside)) {
   flex: 1;
   min-width: 0;
-}
-
-@media (min-width: 1024px) {
-  body {
-    padding-left: 1.5rem !important;
-    padding-right: 1.5rem !important;
-  }
 }
 
 article p {
@@ -627,31 +616,7 @@ footer p:has(a[href*="gohugo"]) { display: none !important; }
    RESPONSIVE
    ══════════════════════════════════ */
 
-/* Tablet: sidebar collapses, hamburger appears */
-@media (max-width: 1024px) {
-  .sb-hamburger {
-    display: flex;
-  }
-
-  .global-sidebar {
-    transform: translateX(-100%);
-  }
-  .global-sidebar.sb-visible {
-    transform: translateX(0);
-  }
-
-  .sb-overlay.sb-visible {
-    display: block;
-  }
-
-  body > div:first-of-type,
-  #main-wrapper,
-  .flex.flex-col.min-h-screen {
-    margin-left: 0;
-  }
-}
-
-/* Mobile: tighter spacing */
+/* Mobile: tighter hero */
 @media (max-width: 768px) {
   body::after {
     width: 280px;

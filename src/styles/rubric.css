@@ -324,21 +324,10 @@
     transform: translateY(-50%);
     width: min(300px, calc((100vw - 1040px) / 2 - 3rem));
     max-width: 300px;
-    max-height: calc(100dvh - 4rem);
-    overflow-y: auto;
-    overscroll-behavior: contain;
-    scrollbar-width: thin;
-    scrollbar-color: var(--border-soft) transparent;
     margin: 0;
-    padding: 0.5rem 0.3rem 0.5rem 1.1rem;
+    padding: 0.5rem 0 0.5rem 1.1rem;
     opacity: 0.72;
     z-index: 0;
-  }
-  .marginalia::-webkit-scrollbar { width: 3px; }
-  .marginalia::-webkit-scrollbar-track { background: transparent; }
-  .marginalia::-webkit-scrollbar-thumb {
-    background: var(--border-soft);
-    border-radius: 2px;
   }
   .marginalia .gloss-latin { font-size: 0.98rem; }
   .marginalia .gloss-vern  { font-size: 0.82rem; }

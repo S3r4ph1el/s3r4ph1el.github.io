@@ -357,3 +357,34 @@
 
 .prose strong { color: var(--text); font-weight: 600; }
 .prose em { color: var(--text-muted); font-style: italic; font-family: var(--font-serif); }
+
+.prose .ill-figure,
+.prose figure {
+  margin: 1.75em 0;
+  padding: 0;
+  text-align: center;
+}
+.prose .ill-figure img,
+.prose figure img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border: 1px solid var(--border-soft);
+  border-radius: 2px;
+  background: var(--bg-card);
+}
+.prose .ill-figure figcaption,
+.prose figure figcaption {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-top: 0.6rem;
+  line-height: 1.5;
+  letter-spacing: 0.015em;
+  text-align: center;
+  max-width: 60ch;
+  margin-inline: auto;
+}

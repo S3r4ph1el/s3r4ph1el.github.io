@@ -1,0 +1,51 @@
+---
+import { getCollection } from 'astro:content';
+import { buildSidebarTree } from '../lib/sidebarTree';
+
+interface Props {
+  currentSlug?: string;
+  lang?: 'pt' | 'en';
+}
+const { currentSlug, lang = 'pt' } = Astro.props;
+
+const entries = await getCollection('writeups', (e) =>
+  !e.data.draft && (e.data.locale ?? 'pt') === lang
+);
+const tree = buildSidebarTree(entries, lang);
+
+const currentPlatform = tree.find((p) =>
+  p.items.some((it) => it.slug === currentSlug)
+)?.platform;
+---
+<aside class="acta-sidebar" aria-label={lang === 'pt' ? 'Outros registros' : 'Other records'}>
+  <p class="sb-heading">
+    <span class="numeral" aria-hidden="true">§</span>
+    <span>{lang === 'pt' ? 'Acta' : 'Acta'}</span>
+  </p>
+  {tree.map((platform) => (
+    <details class="sb-platform" open={platform.platform === currentPlatform}>
+      <summary>
+        <span class="sb-platform-label">{platform.label}</span>
+        <span class="sb-count">{platform.items.length}</span>
+      </summary>
+      <ul class="sb-items">
+        {platform.items.map((it) => (
+          <li>
+            <a
+              href={it.href}
+              class:list={['sb-item', it.slug === currentSlug && 'active']}
+              aria-current={it.slug === currentSlug ? 'page' : undefined}
+            >
+              <span class="sb-item-title">{it.title}</span>
+              {(it.difficulty || it.os) && (
+                <span class="sb-item-meta">
+                  {[it.difficulty, it.os].filter(Boolean).join(' · ')}
+                </span>
+              )}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </details>
+  ))}
+</aside>

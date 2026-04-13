@@ -1,0 +1,18 @@
+---
+import HeroMark from './HeroMark.astro';
+import Epigraph from './Epigraph.astro';
+
+interface Props {
+  variant?: 'hero' | 'compact';
+  name?: string;
+  byline?: string;
+  epigraph?: string;
+  attribution?: string;
+}
+
+const { variant = 'compact', name, byline, epigraph, attribution } = Astro.props;
+---
+<header class="page-header">
+  {variant === 'hero' && <HeroMark name={name} byline={byline} />}
+  {epigraph && <Epigraph text={epigraph} attribution={attribution} />}
+</header>

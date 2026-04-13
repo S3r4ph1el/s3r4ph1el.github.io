@@ -1,0 +1,52 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import Rubric from '../../../components/Rubric.astro';
+import EmptyState from '../../../components/EmptyState.astro';
+import EntryList from '../../../components/EntryList.astro';
+
+const entries = await getCollection('projects', (e) =>
+  !e.data.draft && e.data.locale === 'en'
+);
+entries.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const listEntries = entries.map((e) => ({
+  href: `/en/opera/${e.slug}/`,
+  title: e.data.title,
+  date: e.data.date,
+  description: e.data.description,
+  meta: e.data.stack,
+}));
+---
+<BaseLayout
+  title="Opera · S3r4ph1el"
+  description="Code, tools, and experiments published — S3r4ph1el."
+  lang="en"
+>
+  <div class="terminal-wrap narrow">
+    <Breadcrumb trail={[
+      { label: 'Index', href: '/en/' },
+      { label: 'Opera' },
+    ]} />
+
+    <Rubric
+      numeral="II"
+      title="Opera"
+      subtitle="Code, tools, and experiments."
+    />
+
+    {listEntries.length === 0 ? (
+      <EmptyState
+        latin="Nondum opera."
+        vern="No works published yet."
+      />
+    ) : (
+      <EntryList entries={listEntries} lang="en" />
+    )}
+  </div>
+</BaseLayout>
+
+<style>
+  .narrow { max-width: 880px; }
+</style>

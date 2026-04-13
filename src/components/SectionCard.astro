@@ -1,0 +1,30 @@
+---
+interface Props {
+  numeral: string;
+  latin: string;
+  href: string;
+  count: number | string;
+  unit?: string;
+  subtitle?: string;
+}
+
+const {
+  numeral,
+  latin,
+  href,
+  count,
+  unit = 'entries',
+  subtitle,
+} = Astro.props;
+---
+<a class="section-card" href={href}>
+  <div class="sc-numeral" aria-hidden="true">{numeral}</div>
+  <div class="sc-body">
+    <div class="sc-title">{latin}</div>
+    <div class="sc-rule" aria-hidden="true"></div>
+    <p class="sc-meta">
+      <span class="count">{count}</span> {unit}
+    </p>
+    {subtitle && <p class="sc-subtitle">{subtitle}</p>}
+  </div>
+</a>

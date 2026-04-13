@@ -1,0 +1,34 @@
+---
+interface Entry {
+  href: string;
+  title: string;
+  date: Date;
+  description?: string;
+  meta?: string[];
+}
+interface Props {
+  entries: Entry[];
+  lang?: 'pt' | 'en';
+}
+const { entries, lang = 'pt' } = Astro.props;
+
+const fmt = new Intl.DateTimeFormat(lang === 'pt' ? 'pt-BR' : 'en-GB', {
+  year: 'numeric', month: '2-digit', day: '2-digit',
+});
+---
+<ul class="entry-list">
+  {entries.map((e) => (
+    <li>
+      <a class="entry-item" href={e.href}>
+        <time class="date" datetime={e.date.toISOString()}>{fmt.format(e.date)}</time>
+        <div class="body">
+          <h3 class="title">{e.title}</h3>
+          {e.description && <p class="description">{e.description}</p>}
+          {e.meta && e.meta.length > 0 && (
+            <p class="meta">{e.meta.join(' · ')}</p>
+          )}
+        </div>
+      </a>
+    </li>
+  ))}
+</ul>

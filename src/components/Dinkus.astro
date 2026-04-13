@@ -1,0 +1,11 @@
+---
+interface Props {
+  variant?: 'cross' | 'dots' | 'bar';
+}
+const { variant = 'cross' } = Astro.props;
+
+const glyph = variant === 'dots' ? '·  ·  ·' : '✠';
+---
+<div class:list={['dinkus', variant]} role="separator" aria-hidden="true">
+  <span class="glyph">{glyph}</span>
+</div>

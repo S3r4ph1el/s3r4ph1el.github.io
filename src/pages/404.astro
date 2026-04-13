@@ -1,0 +1,98 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Epigraph from '../components/Epigraph.astro';
+import Dinkus from '../components/Dinkus.astro';
+---
+<BaseLayout
+  title="Non inventum est · S3r4ph1el"
+  description="Esta página não foi encontrada — non inventum est."
+>
+  <div class="terminal-wrap nf">
+    <div class="nf-mark">
+      <div class="nf-glyph" aria-hidden="true">✠</div>
+      <h1 class="nf-code">404</h1>
+      <p class="nf-latin">Non inventum est.</p>
+    </div>
+
+    <Epigraph
+      text="Vagatus est in deserto, in loco inaquoso: viam civitatis habitaculi non invenerunt."
+      attribution="Ps. 106, 4 · Vulgata"
+    />
+
+    <div class="nf-vern">
+      <p lang="pt">Esta página não foi encontrada. A URL pode estar obsoleta ou a peça ainda não foi publicada.</p>
+      <p lang="en"><em>This page was not found. The URL may be stale, or the piece is not yet published.</em></p>
+    </div>
+
+    <Dinkus />
+
+    <div class="nf-cta">
+      <a class="ghost-link" href="/">Index</a>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .nf {
+    max-width: 680px;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    text-align: center;
+  }
+  .nf-mark { margin: 2rem auto 2rem; }
+  .nf-glyph {
+    font-family: var(--font-serif);
+    font-size: clamp(3rem, 7vw, 4.5rem);
+    color: var(--red);
+    line-height: 1;
+    margin: 0 0 0.8rem;
+    opacity: 0.9;
+    user-select: none;
+  }
+  .nf-code {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    font-size: clamp(2.6rem, 6vw, 4rem);
+    letter-spacing: 0.3em;
+    color: var(--text);
+    text-transform: uppercase;
+    margin: 0 0 0.5rem;
+    border: none;
+    padding: 0;
+    line-height: 1;
+    text-align: center;
+  }
+  .nf-code::after {
+    content: '';
+    display: inline-block;
+    width: 0;
+    margin-left: -0.3em;
+  }
+  .nf-latin {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: clamp(1rem, 1.6vw, 1.15rem);
+    color: var(--text-muted);
+    margin: 0;
+    letter-spacing: 0;
+    text-align: center;
+  }
+  .nf-vern {
+    max-width: 56ch;
+    margin: 1.75rem auto 0;
+    color: var(--text-muted);
+  }
+  .nf-vern p {
+    margin: 0.5rem 0;
+    text-align: center;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+  .nf-vern p[lang="en"] {
+    color: var(--muted);
+    font-size: 0.88rem;
+  }
+  .nf-cta {
+    margin-top: 0.5rem;
+  }
+</style>

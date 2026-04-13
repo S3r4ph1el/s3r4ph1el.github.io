@@ -1,0 +1,94 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import ActaSidebar from '../components/ActaSidebar.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  date: Date;
+  platform: string;
+  difficulty?: string;
+  os?: string;
+  categories?: string[];
+  tags?: string[];
+  lang?: 'pt' | 'en';
+  slug: string;
+}
+
+const {
+  title,
+  description,
+  date,
+  platform,
+  difficulty,
+  os,
+  categories,
+  tags,
+  lang = 'pt',
+  slug,
+} = Astro.props;
+
+const fmt = new Intl.DateTimeFormat(lang === 'pt' ? 'pt-BR' : 'en-GB', {
+  year: 'numeric', month: 'long', day: '2-digit',
+});
+
+const L = {
+  pt: {
+    actaHref: '/acta/',
+    indexHref: '/',
+    platform: 'Plataforma',
+    difficulty: 'Dificuldade',
+    os: 'Sistema',
+    date: 'Data',
+    categories: 'Categorias',
+  },
+  en: {
+    actaHref: '/en/acta/',
+    indexHref: '/en/',
+    platform: 'Platform',
+    difficulty: 'Difficulty',
+    os: 'OS',
+    date: 'Date',
+    categories: 'Categories',
+  },
+}[lang];
+---
+<BaseLayout
+  title={`${title} · ${platform} · S3r4ph1el`}
+  description={description}
+  lang={lang}
+>
+  <div class="terminal-wrap with-sidebar">
+    <ActaSidebar currentSlug={slug} lang={lang} />
+    <div class="writeup-content">
+    <Breadcrumb trail={[
+      { label: 'Index', href: L.indexHref },
+      { label: 'Acta', href: L.actaHref },
+      { label: title },
+    ]} />
+
+    <header class="writeup-head">
+      <h1 class="writeup-title">{title}</h1>
+
+      <dl class="writeup-meta">
+        <div><dt>{L.platform}</dt><dd>{platform}</dd></div>
+        {difficulty && <div><dt>{L.difficulty}</dt><dd>{difficulty}</dd></div>}
+        {os && <div><dt>{L.os}</dt><dd>{os}</dd></div>}
+        <div><dt>{L.date}</dt><dd><time datetime={date.toISOString()}>{fmt.format(date)}</time></dd></div>
+      </dl>
+
+      {categories && categories.length > 0 && (
+        <p class="writeup-categories">
+          <span class="label">{L.categories}</span>
+          <span class="vals">{categories.join(' · ')}</span>
+        </p>
+      )}
+    </header>
+
+    <article class="writeup-body prose">
+      <slot />
+    </article>
+    </div>
+  </div>
+</BaseLayout>

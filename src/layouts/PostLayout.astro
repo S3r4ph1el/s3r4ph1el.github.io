@@ -1,0 +1,49 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  date: Date;
+  tags?: string[];
+  lang?: 'pt' | 'en';
+  section: 'scripta' | 'opera';
+}
+
+const { title, description, date, tags, lang = 'pt', section } = Astro.props;
+
+const fmt = new Intl.DateTimeFormat(lang === 'pt' ? 'pt-BR' : 'en-GB', {
+  year: 'numeric', month: 'long', day: '2-digit',
+});
+
+const indexHref = lang === 'pt' ? '/' : '/en/';
+const sectionHref = lang === 'pt' ? `/${section}/` : `/en/${section}/`;
+const sectionLabel = section === 'scripta' ? 'Scripta' : 'Opera';
+---
+<BaseLayout
+  title={`${title} · ${sectionLabel} · S3r4ph1el`}
+  description={description}
+  lang={lang}
+>
+  <div class="terminal-wrap post">
+    <Breadcrumb trail={[
+      { label: 'Index', href: indexHref },
+      { label: sectionLabel, href: sectionHref },
+      { label: title },
+    ]} />
+
+    <header class="post-head">
+      <time class="post-date" datetime={date.toISOString()}>{fmt.format(date)}</time>
+      <h1 class="post-title">{title}</h1>
+      {description && <p class="post-desc"><em>{description}</em></p>}
+      {tags && tags.length > 0 && (
+        <p class="post-tags">{tags.map((t) => `#${t}`).join('  ')}</p>
+      )}
+    </header>
+
+    <article class="post-body prose">
+      <slot />
+    </article>
+  </div>
+</BaseLayout>

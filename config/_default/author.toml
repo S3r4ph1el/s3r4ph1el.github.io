@@ -1,9 +1,0 @@
-name    = "S3r4ph1el"
-image   = ""
-headline = "Offensive Security | CTF | Red Team"
-bio     = "Analista de segurança ofensiva. CTFs, HackTheBox, Hacking Club e labs próprios."
-
-links = [
-  { name = "github",   url = "https://github.com/S3r4ph1el" },
-  { name = "linkedin", url = "https://linkedin.com/in/enzo-teles" },
-]

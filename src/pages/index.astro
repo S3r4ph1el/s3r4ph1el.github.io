@@ -1,0 +1,80 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import Rubric from '../components/Rubric.astro';
+import Dinkus from '../components/Dinkus.astro';
+import SectionCard from '../components/SectionCard.astro';
+import ContactCard from '../components/ContactCard.astro';
+import SeraphimGloss from '../components/SeraphimGloss.astro';
+
+const [blog, projects, writeups] = await Promise.all([
+  getCollection('blog', (e) => !e.data.draft && (e.data.locale ?? 'pt') === 'pt'),
+  getCollection('projects', (e) => !e.data.draft && (e.data.locale ?? 'pt') === 'pt'),
+  getCollection('writeups', (e) => !e.data.draft && (e.data.locale ?? 'pt') === 'pt'),
+]);
+---
+<BaseLayout
+  title="S3r4ph1el"
+  description="Blog pessoal de Enzo Teles (S3r4ph1el) — writeups de HTB / Hacking Club, projetos e artigos de Segurança Ofensiva."
+>
+  <SeraphimGloss lang="pt" />
+
+  <div class="terminal-wrap home">
+    <PageHeader
+      variant="hero"
+      byline="Enzo Teles"
+      epigraph="Benedictus Dominus Deus meus, qui docet manus meas ad prœlium, et digitos meos ad bellum."
+      attribution="Ps. 143, 1 · Vulgata"
+    />
+
+    <div class="hero-cta">
+      <p class="role-line">Analista de Segurança Ofensiva</p>
+      <a class="ghost-link" href="/vita/">Vita</a>
+    </div>
+
+    <Rubric numeral="§" title="Index" />
+
+    <div class="section-grid">
+      <SectionCard
+        numeral="I"
+        latin="Scripta"
+        href="/scripta/"
+        count={blog.length}
+        unit={blog.length === 1 ? 'artigo' : 'artigos'}
+        subtitle="Ensaios e notas técnicas."
+      />
+      <SectionCard
+        numeral="II"
+        latin="Opera"
+        href="/opera/"
+        count={projects.length}
+        unit={projects.length === 1 ? 'projeto' : 'projetos'}
+        subtitle="Código e ferramentas."
+      />
+      <SectionCard
+        numeral="III"
+        latin="Acta"
+        href="/acta/"
+        count={writeups.length}
+        unit={writeups.length === 1 ? 'writeup' : 'writeups'}
+        subtitle="Hack The Box, Hacking Club e CTFs."
+      />
+    </div>
+
+    <Rubric numeral="§" title="Contactus" />
+
+    <div class="contact-grid">
+      <ContactCard label="GitHub" href="https://github.com/S3r4ph1el" />
+      <ContactCard label="LinkedIn" href="https://linkedin.com/in/enzo-teles" />
+      <ContactCard label="Email" handle="ezteles.px@gmail.com" href="mailto:ezteles.px@gmail.com" external={false} />
+    </div>
+
+    <Rubric numeral="§" title="Plataformas" />
+
+    <div class="contact-grid platforms">
+      <ContactCard label="Hack The Box" href="https://app.hackthebox.com/public/users/2124077" />
+      <ContactCard label="Hacking Club" href="https://app.hackingclub.com/profile/user/21053" />
+    </div>
+  </div>
+</BaseLayout>

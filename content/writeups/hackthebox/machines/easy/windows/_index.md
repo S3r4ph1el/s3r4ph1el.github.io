@@ -1,3 +1,0 @@
----
-title: "Easy — Windows"
----

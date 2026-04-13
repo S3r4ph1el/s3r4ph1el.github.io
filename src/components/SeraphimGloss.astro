@@ -1,0 +1,66 @@
+---
+interface Props {
+  lang?: 'pt' | 'en';
+}
+const { lang = 'pt' } = Astro.props;
+
+const glosses = {
+  pt: [
+    {
+      ref: 'Isaías 6, 2',
+      latin:
+        'Seraphin stabant super illud: sex alæ uni, et sex alæ alteri; duabus velabant faciem ejus, et duabus velabant pedes ejus, et duabus volabant.',
+      vern:
+        'Serafins estavam acima dele; cada um tinha seis asas: com duas cobriam o rosto, com duas cobriam os pés, e com duas voavam.',
+    },
+    {
+      ref: 'Isaías 6, 3',
+      latin:
+        'Et clamabant alter ad alterum, et dicebant: Sanctus, Sanctus, Sanctus Dominus exercituum; plena est omnis terra gloria ejus.',
+      vern:
+        'E clamavam um ao outro, e diziam: Santo, Santo, Santo é o Senhor dos Exércitos; toda a terra está cheia da sua glória.',
+    },
+    {
+      ref: 'Isaías 6, 4',
+      latin:
+        'Et commota sunt superliminaria cardinum a voce clamantis, et domus impleta est fumo.',
+      vern:
+        'E os umbrais das portas foram abalados pela voz daquele que clamava, e a casa encheu-se de fumaça.',
+    },
+  ],
+  en: [
+    {
+      ref: 'Isaiah 6, 2',
+      latin:
+        'Seraphin stabant super illud: sex alæ uni, et sex alæ alteri; duabus velabant faciem ejus, et duabus velabant pedes ejus, et duabus volabant.',
+      vern:
+        'Seraphim stood above it; each one had six wings: with two they covered his face, with two they covered his feet, and with two they flew.',
+    },
+    {
+      ref: 'Isaiah 6, 3',
+      latin:
+        'Et clamabant alter ad alterum, et dicebant: Sanctus, Sanctus, Sanctus Dominus exercituum; plena est omnis terra gloria ejus.',
+      vern:
+        'And they cried one to another, and said: Holy, Holy, Holy, the Lord of Hosts; all the earth is full of his glory.',
+    },
+    {
+      ref: 'Isaiah 6, 4',
+      latin:
+        'Et commota sunt superliminaria cardinum a voce clamantis, et domus impleta est fumo.',
+      vern:
+        'And the lintels of the doors were moved at the voice of him that cried, and the house was filled with smoke.',
+    },
+  ],
+};
+
+const entries = glosses[lang];
+---
+<aside class="marginalia" aria-label={lang === 'pt' ? 'Glosa sobre os Serafins — Isaías 6, 2-4' : 'Gloss on the Seraphim — Isaiah 6, 2-4'}>
+  {entries.map((e) => (
+    <div class="gloss-entry">
+      <p class="gloss-ref">{e.ref}</p>
+      <p class="gloss-latin"><em>{e.latin}</em></p>
+      <p class="gloss-vern">({e.vern})</p>
+    </div>
+  ))}
+</aside>

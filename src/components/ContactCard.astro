@@ -1,0 +1,15 @@
+---
+interface Props {
+  label: string;
+  handle?: string;
+  href: string;
+  external?: boolean;
+}
+const { label, handle, href, external = true } = Astro.props;
+const rel = external ? 'noopener noreferrer' : undefined;
+const target = external ? '_blank' : undefined;
+---
+<a class="contact-card" href={href} rel={rel} target={target}>
+  <span class="cc-label">{label}</span>
+  {handle && <span class="cc-handle">{handle}</span>}
+</a>

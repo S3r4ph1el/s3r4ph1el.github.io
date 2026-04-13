@@ -1,0 +1,7 @@
+---
+interface Props {
+  class?: string;
+}
+const { class: cls } = Astro.props;
+---
+<span class:list={['caret', cls]} aria-hidden="true"></span>

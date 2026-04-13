@@ -1,0 +1,66 @@
+---
+import '../styles/global.css';
+import '../styles/terminal.css';
+import '../styles/rubric.css';
+import '../styles/prose.css';
+
+import ColophonBar from '../components/ColophonBar.astro';
+import LangSwitcher from '../components/LangSwitcher.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  lang?: 'pt' | 'en';
+  ogImage?: string;
+}
+
+const {
+  title,
+  description = 'Blog pessoal de S3r4ph1el — Offensive Security, writeups de HTB e Hacking Club, projetos e artigos.',
+  lang = 'pt',
+  ogImage = '/images/hero.png',
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
+---
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#080808" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(ogImage, Astro.site).href} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="S3r4ph1el · Feed"
+      href={lang === 'en' ? '/en/rss.xml' : '/rss.xml'}
+    />
+
+    <meta name="generator" content={Astro.generator} />
+  </head>
+  <body>
+    <LangSwitcher lang={lang} pathname={Astro.url.pathname} />
+    <main>
+      <slot />
+    </main>
+    <ColophonBar lang={lang} />
+  </body>
+</html>

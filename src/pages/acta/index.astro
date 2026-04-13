@@ -1,0 +1,53 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import Rubric from '../../components/Rubric.astro';
+import EmptyState from '../../components/EmptyState.astro';
+import ActaList from '../../components/ActaList.astro';
+import ActaSidebar from '../../components/ActaSidebar.astro';
+
+const entries = await getCollection('writeups', (e) =>
+  !e.data.draft && (e.data.locale ?? 'pt') === 'pt'
+);
+entries.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const listEntries = entries.map((e) => ({
+  slug: e.slug,
+  title: e.data.title,
+  date: e.data.date,
+  description: e.data.description,
+  platform: e.data.platform,
+  difficulty: e.data.difficulty,
+  os: e.data.os,
+}));
+---
+<BaseLayout
+  title="Acta · S3r4ph1el"
+  description="Writeups de HackTheBox, Hacking Club e CTFs — passo a passo do ofício."
+>
+  <div class="terminal-wrap with-sidebar">
+    <ActaSidebar lang="pt" />
+    <div class="writeup-content">
+      <Breadcrumb trail={[
+        { label: 'Index', href: '/' },
+        { label: 'Acta' },
+      ]} />
+
+      <Rubric
+        numeral="III"
+        title="Acta"
+        subtitle="Hack The Box, Hacking Club e CTFs."
+      />
+
+      {listEntries.length === 0 ? (
+        <EmptyState
+          latin="Nondum acta."
+          vern="Ainda não há registros publicados."
+        />
+      ) : (
+        <ActaList entries={listEntries} lang="pt" />
+      )}
+    </div>
+  </div>
+</BaseLayout>

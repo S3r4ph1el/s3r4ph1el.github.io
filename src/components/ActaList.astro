@@ -1,0 +1,130 @@
+---
+interface Entry {
+  slug: string;
+  title: string;
+  date: Date;
+  description?: string;
+  platform: string;
+  difficulty?: string;
+  os?: string;
+}
+interface Props {
+  entries: Entry[];
+  lang?: 'pt' | 'en';
+}
+const { entries, lang = 'pt' } = Astro.props;
+
+const fmt = new Intl.DateTimeFormat(lang === 'pt' ? 'pt-BR' : 'en-GB', {
+  year: 'numeric', month: '2-digit', day: '2-digit',
+});
+
+const L = {
+  pt: {
+    platform: 'Plataforma',
+    all: 'Todas',
+    allMasc: 'Todos',
+    difficulty: 'Dificuldade',
+    os: 'Sistema',
+    hc: 'Hacking Club',
+    empty: 'Nenhum registro corresponde aos filtros.',
+  },
+  en: {
+    platform: 'Platform',
+    all: 'All',
+    allMasc: 'All',
+    difficulty: 'Difficulty',
+    os: 'OS',
+    hc: 'Hacking Club',
+    empty: 'No records match the filters.',
+  },
+}[lang];
+
+const baseAcd = lang === 'pt' ? '/acta' : '/en/acta';
+---
+<div class="acta-filters" role="group" aria-label="filters">
+  <div class="filter-group" data-filter="platform">
+    <span class="filter-label">{L.platform}</span>
+    <div class="filter-btns">
+      <button type="button" class="filter-btn active" data-value="all">{L.all}</button>
+      <button type="button" class="filter-btn" data-value="HackTheBox">HackTheBox</button>
+      <button type="button" class="filter-btn" data-value="HackingClub">{L.hc}</button>
+    </div>
+  </div>
+  <div class="filter-group" data-filter="difficulty">
+    <span class="filter-label">{L.difficulty}</span>
+    <div class="filter-btns">
+      <button type="button" class="filter-btn active" data-value="all">{L.all}</button>
+      <button type="button" class="filter-btn" data-value="Easy">Easy</button>
+      <button type="button" class="filter-btn" data-value="Medium">Medium</button>
+      <button type="button" class="filter-btn" data-value="Hard">Hard</button>
+      <button type="button" class="filter-btn" data-value="Insane">Insane</button>
+    </div>
+  </div>
+  <div class="filter-group" data-filter="os">
+    <span class="filter-label">{L.os}</span>
+    <div class="filter-btns">
+      <button type="button" class="filter-btn active" data-value="all">{L.allMasc}</button>
+      <button type="button" class="filter-btn" data-value="Linux">Linux</button>
+      <button type="button" class="filter-btn" data-value="Windows">Windows</button>
+    </div>
+  </div>
+</div>
+
+<ul class="entry-list acta-list" data-list>
+  {entries.map((e) => (
+    <li
+      data-platform={e.platform}
+      data-difficulty={e.difficulty ?? ''}
+      data-os={e.os ?? ''}
+    >
+      <a class="entry-item" href={`${baseAcd}/${e.slug}/`}>
+        <time class="date" datetime={e.date.toISOString()}>{fmt.format(e.date)}</time>
+        <div class="body">
+          <h3 class="title">{e.title}</h3>
+          {e.description && <p class="description">{e.description}</p>}
+          <p class="meta">
+            {[e.platform, e.difficulty, e.os].filter(Boolean).join(' · ')}
+          </p>
+        </div>
+      </a>
+    </li>
+  ))}
+</ul>
+
+<p class="acta-empty" data-empty hidden>{L.empty}</p>
+
+<script>
+  const state: Record<string, string> = { platform: 'all', difficulty: 'all', os: 'all' };
+  const list = document.querySelector<HTMLElement>('[data-list]');
+  const emptyEl = document.querySelector<HTMLElement>('[data-empty]');
+
+  function apply() {
+    if (!list) return;
+    let visible = 0;
+    list.querySelectorAll<HTMLLIElement>('li').forEach((li) => {
+      const p = li.dataset.platform || '';
+      const d = li.dataset.difficulty || '';
+      const o = li.dataset.os || '';
+      const match =
+        (state.platform === 'all' || p === state.platform) &&
+        (state.difficulty === 'all' || d === state.difficulty) &&
+        (state.os === 'all' || o === state.os);
+      li.hidden = !match;
+      if (match) visible++;
+    });
+    if (emptyEl) emptyEl.hidden = visible > 0;
+  }
+
+  document.querySelectorAll<HTMLButtonElement>('.filter-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const group = btn.closest<HTMLElement>('.filter-group')!.dataset.filter!;
+      const value = btn.dataset.value!;
+      state[group] = value;
+      btn.closest('.filter-group')!
+        .querySelectorAll('.filter-btn')
+        .forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+      apply();
+    });
+  });
+</script>

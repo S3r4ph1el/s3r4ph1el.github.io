@@ -1,0 +1,14 @@
+---
+interface Props {
+  name?: string;
+  byline?: string;
+}
+const { name = 'S3R4PH1EL', byline } = Astro.props;
+---
+<div class="hero-mark">
+  <div class="hero-cross" aria-hidden="true">✠</div>
+  <div class="hero-frame">
+    <h1 class="hero-name">{name}</h1>
+    {byline && <p class="hero-byline">{byline}</p>}
+  </div>
+</div>

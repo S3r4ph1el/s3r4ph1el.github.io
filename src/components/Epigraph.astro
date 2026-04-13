@@ -1,0 +1,13 @@
+---
+interface Props {
+  text: string;
+  attribution?: string;
+  ornament?: string;
+}
+const { text, attribution, ornament = '✠' } = Astro.props;
+---
+<p class="epigraph">
+  <span class="orn" aria-hidden="true">{ornament}</span>
+  <em>{text}</em>
+  {attribution && <span class="attr">{attribution}</span>}
+</p>

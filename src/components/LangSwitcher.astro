@@ -1,0 +1,30 @@
+---
+interface Props {
+  lang: 'pt' | 'en';
+  pathname: string;
+}
+const { lang, pathname } = Astro.props;
+
+let ptHref: string;
+let enHref: string;
+
+if (lang === 'pt') {
+  ptHref = pathname;
+  enHref = '/en' + (pathname.endsWith('/') ? pathname : pathname + '/');
+} else {
+  ptHref = pathname.replace(/^\/en/, '') || '/';
+  if (!ptHref.endsWith('/')) ptHref += '/';
+  enHref = pathname;
+}
+---
+<nav class="lang-switcher" aria-label="language">
+  {lang === 'pt'
+    ? <span class="active" aria-current="true">PT</span>
+    : <a href={ptHref}>PT</a>
+  }
+  <span class="sep" aria-hidden="true">·</span>
+  {lang === 'en'
+    ? <span class="active" aria-current="true">EN</span>
+    : <a href={enHref}>EN</a>
+  }
+</nav>

@@ -1,0 +1,16 @@
+---
+interface Props {
+  lang?: 'pt' | 'en';
+}
+const { lang = 'pt' } = Astro.props;
+
+const homeHref = lang === 'en' ? '/en/' : '/';
+const homeLabel = lang === 'en' ? 'Home' : 'Início';
+---
+<footer class="colophon" role="contentinfo">
+  <a class="colophon-link" href={homeHref} aria-label={homeLabel}>
+    <span class="orn" aria-hidden="true">✠</span>
+    <span>Ducet · et · Imperat</span>
+    <span class="orn" aria-hidden="true">✠</span>
+  </a>
+</footer>

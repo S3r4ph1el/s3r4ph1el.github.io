@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://s3r4ph1el.github.io/sitemap-index.xml

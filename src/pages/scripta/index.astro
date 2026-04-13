@@ -1,0 +1,51 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import Rubric from '../../components/Rubric.astro';
+import EmptyState from '../../components/EmptyState.astro';
+import EntryList from '../../components/EntryList.astro';
+
+const entries = await getCollection('blog', (e) =>
+  !e.data.draft && (e.data.locale ?? 'pt') === 'pt'
+);
+entries.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const listEntries = entries.map((e) => ({
+  href: `/scripta/${e.slug}/`,
+  title: e.data.title,
+  date: e.data.date,
+  description: e.data.description,
+  meta: e.data.tags,
+}));
+---
+<BaseLayout
+  title="Scripta · S3r4ph1el"
+  description="Ensaios e notas técnicas sobre Segurança Ofensiva — S3r4ph1el."
+>
+  <div class="terminal-wrap narrow">
+    <Breadcrumb trail={[
+      { label: 'Index', href: '/' },
+      { label: 'Scripta' },
+    ]} />
+
+    <Rubric
+      numeral="I"
+      title="Scripta"
+      subtitle="Ensaios e notas técnicas sobre o ofício."
+    />
+
+    {listEntries.length === 0 ? (
+      <EmptyState
+        latin="Nondum scripta sunt."
+        vern="Ainda não há escritos publicados."
+      />
+    ) : (
+      <EntryList entries={listEntries} lang="pt" />
+    )}
+  </div>
+</BaseLayout>
+
+<style>
+  .narrow { max-width: 880px; }
+</style>

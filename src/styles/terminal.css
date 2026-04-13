@@ -1,0 +1,46 @@
+
+
+.caret {
+  display: inline-block;
+  width: 0.55ch;
+  height: 1em;
+  background: var(--red);
+  margin-left: 0.15ch;
+  vertical-align: text-bottom;
+  animation: blink 1.05s step-end infinite;
+  box-shadow: 0 0 4px var(--red-glow);
+}
+@keyframes blink {
+  50% { opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .caret { animation: none; opacity: 1; }
+}
+
+.shell {
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  line-height: 1.55;
+  background: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 4px 4px 0;
+  padding: 0.8em 1em;
+  color: var(--text);
+  overflow-x: auto;
+  margin: 1.25em 0;
+  white-space: pre-wrap;
+}
+.shell .user   { color: var(--red); }
+.shell .host   { color: var(--gold); }
+.shell .sigil  { color: var(--text-muted); }
+.shell .cmd    { color: var(--text); }
+.shell .out    { color: var(--text-muted); }
+
+.terminal-wrap {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 5rem;
+  position: relative;
+  z-index: var(--z-base);
+}

@@ -1,20 +1,31 @@
 
 
 .terminal-wrap.home {
-  padding: 1.5rem 1.25rem 1.25rem;
-  min-height: calc(100dvh - 4rem); 
+  padding: 1.25rem 1.25rem 1rem;
+  min-height: calc(100dvh - 3.5rem);
+  max-height: calc(100dvh - 3.5rem);
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
 }
-.terminal-wrap.home .hero-mark { margin: 0.5rem auto 1.25rem; }
-.terminal-wrap.home .epigraph { margin: 0.5rem auto 1rem; }
-.terminal-wrap.home .hero-cta { margin: 0.75rem auto 0.75rem; }
-.terminal-wrap.home .rubric { margin: 1rem 0 0.4rem; }
-.terminal-wrap.home .section-grid { margin: 0.7rem 0 0.4rem; }
-.terminal-wrap.home .contact-grid { margin: 0.6rem 0 0.4rem; }
+.terminal-wrap.home > * { flex: 0 0 auto; }
+.terminal-wrap.home .hero-mark { margin: 0.25rem auto 0.9rem; }
+.terminal-wrap.home .epigraph { margin: 0.35rem auto 0.75rem; }
+.terminal-wrap.home .hero-cta { margin: 0.6rem auto; }
+.terminal-wrap.home .rubric { margin: 0.7rem 0 0.3rem; }
+.terminal-wrap.home .rubric h2 { padding-bottom: 0.35rem; }
+.terminal-wrap.home .section-grid { margin: 0.5rem 0 0.3rem; }
+.terminal-wrap.home .contact-grid { margin: 0.45rem 0 0.3rem; }
 .terminal-wrap.home > *:last-child { margin-bottom: 0; }
-@media (max-width: 720px) {
-  .terminal-wrap.home { min-height: auto; padding: 1.5rem 1.25rem 2rem; }
+
+@media (max-width: 900px), (max-height: 760px) {
+  .terminal-wrap.home {
+    min-height: auto;
+    max-height: none;
+    overflow: visible;
+    padding: 1.25rem 1.25rem 2rem;
+  }
 }
 
 .hero-mark {

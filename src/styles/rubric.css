@@ -1,104 +1,105 @@
 
 
 .terminal-wrap.home {
-  padding: 0.9rem 1.25rem 0.5rem;
+  padding: 1.1rem 1.25rem 0.75rem;
   min-height: calc(100dvh - 2.4rem);
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 .terminal-wrap.home > *:last-child { margin-bottom: 0; }
 
-.terminal-wrap.home .hero-mark { margin: 0 auto 0.4rem; }
+.terminal-wrap.home .hero-mark { margin: 0 auto 0.55rem; }
 .terminal-wrap.home .hero-cross {
-  font-size: clamp(2rem, 5.5vh, 3.2rem);
-  margin: 0 0 0.4rem;
+  font-size: clamp(2.4rem, 5.8vh, 3.7rem);
+  margin: 0 0 0.45rem;
 }
 .terminal-wrap.home .hero-frame {
-  padding: 0.35rem 1.2rem 0.45rem;
+  padding: 0.45rem 1.35rem 0.5rem;
 }
 .terminal-wrap.home .hero-name {
-  font-size: clamp(1.1rem, 2.4vw, 1.55rem);
-  letter-spacing: 0.4em;
+  font-size: clamp(1.25rem, 2.7vw, 1.75rem);
+  letter-spacing: 0.42em;
 }
 .terminal-wrap.home .hero-byline {
-  margin-top: 0.3rem;
-  font-size: clamp(0.8rem, 1.15vw, 0.92rem);
+  margin-top: 0.35rem;
+  font-size: clamp(0.85rem, 1.2vw, 0.98rem);
 }
 
 .terminal-wrap.home .epigraph {
-  margin: 0.25rem auto 0.35rem;
-  font-size: clamp(0.82rem, 1.05vw, 0.95rem);
-  line-height: 1.5;
-  max-width: 60ch;
+  margin: 0.3rem auto 0.5rem;
+  font-size: clamp(0.88rem, 1.15vw, 1rem);
+  line-height: 1.55;
+  max-width: 62ch;
 }
 .terminal-wrap.home .epigraph .attr {
-  margin-top: 0.35rem;
-  font-size: 0.75em;
+  margin-top: 0.4rem;
+  font-size: 0.78em;
 }
 
-.terminal-wrap.home .hero-cta { margin: 0.25rem auto 0.4rem; }
+.terminal-wrap.home .hero-cta { margin: 0.35rem auto 0.55rem; }
 .terminal-wrap.home .hero-cta .role-line {
-  font-size: clamp(0.9rem, 1.3vw, 1rem);
+  font-size: clamp(0.95rem, 1.4vw, 1.05rem);
 }
 .terminal-wrap.home .ghost-link {
-  margin: 0.45rem 0 0;
-  padding: 0.32rem 1.25rem 0.38rem;
-  font-size: 0.82rem;
-  letter-spacing: 0.22em;
+  margin: 0.55rem 0 0;
+  padding: 0.4rem 1.4rem 0.45rem;
+  font-size: 0.86rem;
+  letter-spacing: 0.24em;
 }
 
-.terminal-wrap.home .rubric { margin: 0.3rem 0 0.15rem; }
+.terminal-wrap.home .rubric { margin: 0.45rem 0 0.2rem; }
 .terminal-wrap.home .rubric h2 {
-  font-size: 0.95rem;
-  padding-bottom: 0.3rem;
-  letter-spacing: 0.12em;
+  font-size: 1.02rem;
+  padding-bottom: 0.35rem;
+  letter-spacing: 0.13em;
 }
 
 .terminal-wrap.home .section-grid {
-  margin: 0.3rem 0 0.15rem;
-  gap: 0.7rem;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin: 0.4rem 0 0.2rem;
+  gap: 0.85rem;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
 }
 .terminal-wrap.home .section-card {
-  padding: 0.7rem 0.95rem;
-  column-gap: 0.9rem;
+  padding: 0.85rem 1.05rem;
+  column-gap: 1rem;
 }
 .terminal-wrap.home .section-card .sc-numeral {
-  font-size: 1.6rem;
-  min-width: 1.7ch;
+  font-size: 1.9rem;
+  min-width: 1.9ch;
 }
 .terminal-wrap.home .section-card .sc-title {
-  font-size: 0.92rem;
-  margin: 0.05rem 0 0.15rem;
-  letter-spacing: 0.14em;
+  font-size: 1rem;
+  margin: 0.08rem 0 0.2rem;
+  letter-spacing: 0.15em;
 }
 .terminal-wrap.home .section-card .sc-rule {
-  margin: 0.15rem 0 0.3rem;
-  width: 1.8rem;
+  margin: 0.2rem 0 0.4rem;
+  width: 2rem;
 }
-.terminal-wrap.home .section-card .sc-meta { font-size: 0.7rem; }
+.terminal-wrap.home .section-card .sc-meta { font-size: 0.73rem; }
 .terminal-wrap.home .section-card .sc-subtitle {
-  font-size: 0.83rem;
-  margin: 0.25rem 0 0;
-  line-height: 1.35;
+  font-size: 0.88rem;
+  margin: 0.35rem 0 0;
+  line-height: 1.4;
 }
 
 .terminal-wrap.home .contact-grid {
-  margin: 0.25rem 0 0.15rem;
-  gap: 0.55rem;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  margin: 0.35rem 0 0.2rem;
+  gap: 0.65rem;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 .terminal-wrap.home .contact-card {
-  padding: 0.55rem 0.85rem;
-  gap: 0.15rem;
+  padding: 0.7rem 0.9rem;
+  gap: 0.2rem;
 }
 .terminal-wrap.home .contact-card .cc-label {
-  font-size: 0.82rem;
-  letter-spacing: 0.15em;
+  font-size: 0.88rem;
+  letter-spacing: 0.16em;
 }
 .terminal-wrap.home .contact-card .cc-handle {
-  font-size: 0.66rem;
-  margin-top: 0.15rem;
+  font-size: 0.7rem;
+  margin-top: 0.2rem;
 }
 
 @media (max-width: 720px) {
@@ -108,48 +109,48 @@
   }
 }
 
-@media (min-width: 721px) and (max-height: 760px) {
-  .terminal-wrap.home { padding: 0.65rem 1.25rem 0.4rem; }
-  .terminal-wrap.home .hero-mark { margin-bottom: 0.25rem; }
+@media (min-width: 721px) and (max-height: 740px) {
+  .terminal-wrap.home { padding: 0.75rem 1.25rem 0.5rem; }
+  .terminal-wrap.home .hero-mark { margin-bottom: 0.35rem; }
   .terminal-wrap.home .hero-cross {
-    font-size: clamp(1.6rem, 4vh, 2.3rem);
-    margin-bottom: 0.3rem;
+    font-size: clamp(1.8rem, 4.2vh, 2.6rem);
+    margin-bottom: 0.35rem;
   }
-  .terminal-wrap.home .hero-frame { padding: 0.3rem 1.1rem 0.4rem; }
-  .terminal-wrap.home .hero-name { font-size: clamp(1rem, 2vw, 1.3rem); }
-  .terminal-wrap.home .hero-byline { font-size: 0.8rem; margin-top: 0.2rem; }
+  .terminal-wrap.home .hero-frame { padding: 0.35rem 1.2rem 0.4rem; }
+  .terminal-wrap.home .hero-name { font-size: clamp(1.05rem, 2.1vw, 1.4rem); }
+  .terminal-wrap.home .hero-byline { font-size: 0.82rem; margin-top: 0.25rem; }
   .terminal-wrap.home .epigraph {
-    font-size: 0.84rem;
-    line-height: 1.45;
-    margin: 0.2rem auto 0.25rem;
+    font-size: 0.86rem;
+    line-height: 1.5;
+    margin: 0.25rem auto 0.35rem;
   }
-  .terminal-wrap.home .epigraph .attr { margin-top: 0.25rem; }
-  .terminal-wrap.home .hero-cta { margin: 0.15rem auto 0.25rem; }
-  .terminal-wrap.home .hero-cta .role-line { font-size: 0.88rem; }
+  .terminal-wrap.home .epigraph .attr { margin-top: 0.3rem; }
+  .terminal-wrap.home .hero-cta { margin: 0.25rem auto 0.35rem; }
+  .terminal-wrap.home .hero-cta .role-line { font-size: 0.92rem; }
   .terminal-wrap.home .ghost-link {
-    margin-top: 0.3rem;
-    padding: 0.26rem 1.1rem 0.32rem;
-    font-size: 0.78rem;
+    margin-top: 0.4rem;
+    padding: 0.32rem 1.2rem 0.38rem;
+    font-size: 0.82rem;
   }
-  .terminal-wrap.home .rubric { margin: 0.2rem 0 0.1rem; }
-  .terminal-wrap.home .rubric h2 { font-size: 0.88rem; padding-bottom: 0.25rem; }
-  .terminal-wrap.home .section-grid { gap: 0.55rem; }
-  .terminal-wrap.home .section-card { padding: 0.55rem 0.85rem; }
-  .terminal-wrap.home .section-card .sc-numeral { font-size: 1.35rem; }
-  .terminal-wrap.home .section-card .sc-title { font-size: 0.85rem; }
+  .terminal-wrap.home .rubric { margin: 0.3rem 0 0.15rem; }
+  .terminal-wrap.home .rubric h2 { font-size: 0.95rem; padding-bottom: 0.3rem; }
+  .terminal-wrap.home .section-grid { gap: 0.65rem; }
+  .terminal-wrap.home .section-card { padding: 0.65rem 0.9rem; }
+  .terminal-wrap.home .section-card .sc-numeral { font-size: 1.55rem; }
+  .terminal-wrap.home .section-card .sc-title { font-size: 0.9rem; }
   .terminal-wrap.home .section-card .sc-subtitle {
-    font-size: 0.78rem;
-    margin-top: 0.2rem;
+    font-size: 0.82rem;
+    margin-top: 0.25rem;
   }
-  .terminal-wrap.home .section-card .sc-meta { font-size: 0.65rem; }
-  .terminal-wrap.home .section-card .sc-rule { margin: 0.1rem 0 0.2rem; }
-  .terminal-wrap.home .contact-grid { gap: 0.45rem; }
-  .terminal-wrap.home .contact-card { padding: 0.4rem 0.75rem; }
+  .terminal-wrap.home .section-card .sc-meta { font-size: 0.68rem; }
+  .terminal-wrap.home .section-card .sc-rule { margin: 0.15rem 0 0.3rem; }
+  .terminal-wrap.home .contact-grid { gap: 0.5rem; }
+  .terminal-wrap.home .contact-card { padding: 0.5rem 0.8rem; }
   .terminal-wrap.home .contact-card .cc-label {
-    font-size: 0.76rem;
-    letter-spacing: 0.13em;
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
   }
-  .terminal-wrap.home .contact-card .cc-handle { font-size: 0.62rem; }
+  .terminal-wrap.home .contact-card .cc-handle { font-size: 0.65rem; }
 }
 
 .hero-mark {

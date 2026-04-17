@@ -20,13 +20,6 @@ const glosses = {
       vern:
         'E clamavam um ao outro, e diziam: Santo, Santo, Santo é o Senhor dos Exércitos; toda a terra está cheia da sua glória.',
     },
-    {
-      ref: 'Isaías 6, 4',
-      latin:
-        'Et commota sunt superliminaria cardinum a voce clamantis, et domus impleta est fumo.',
-      vern:
-        'E os umbrais das portas foram abalados pela voz daquele que clamava, e a casa encheu-se de fumaça.',
-    },
   ],
   en: [
     {
@@ -43,19 +36,12 @@ const glosses = {
       vern:
         'And they cried one to another, and said: Holy, Holy, Holy, the Lord of Hosts; all the earth is full of his glory.',
     },
-    {
-      ref: 'Isaiah 6, 4',
-      latin:
-        'Et commota sunt superliminaria cardinum a voce clamantis, et domus impleta est fumo.',
-      vern:
-        'And the lintels of the doors were moved at the voice of him that cried, and the house was filled with smoke.',
-    },
   ],
 };
 
 const entries = glosses[lang];
 ---
-<aside class="marginalia" aria-label={lang === 'pt' ? 'Glosa sobre os Serafins — Isaías 6, 2-4' : 'Gloss on the Seraphim — Isaiah 6, 2-4'}>
+<aside class="marginalia" aria-label={lang === 'pt' ? 'Glosa sobre os Serafins — Isaías 6, 2-3' : 'Gloss on the Seraphim — Isaiah 6, 2-3'}>
   {entries.map((e) => (
     <div class="gloss-entry">
       <p class="gloss-ref">{e.ref}</p>
